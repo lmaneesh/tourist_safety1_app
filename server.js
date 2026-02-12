@@ -8,10 +8,26 @@ const emergencyRoutes = require("./routes/emergencyRoutes");
 const flightRoutes = require("./routes/flights");
 const trainRoutes = require("./routes/trains");
 
+const path = require("path");
+
 app.use(express.json());
 
-// Serve frontend files
-app.use(express.static("public"));
+// Serve static assets from public
+app.use(express.static(path.join(__dirname, "public")));
+
+// Route to serve HTML files from views
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "index.html"));
+});
+
+app.get("/:page", (req, res) => {
+  const page = req.params.page;
+  if (page.endsWith(".html")) {
+    res.sendFile(path.join(__dirname, "views", page));
+  } else {
+    res.sendFile(path.join(__dirname, "views", `${page}.html`));
+  }
+});
 
 // Routes
 app.use("/api", locationRoutes);
