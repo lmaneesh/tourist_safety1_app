@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather - Tourist Safety App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- TOP NAVBAR -->
+    <div class="navbar">
+        <div class="logo">🧭 Tourist Safety</div>
+
+        <div class="nav-links">
+            <a href="dashboard.html">Home</a>
+            <a href="edit-profile.html">Profile</a>
+            <a href="tourist.html">Tourist Places</a>
+            <a href="weather.html" class="active">Weather</a>
+            <a href="transport.html">Transport</a>
+            <a href="#" id="logoutBtn" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="page-container">
+        <div class="card">
+            <h2>🌦️ Climatic Conditions & Alerts</h2>
+            <p>Stay informed about the weather at your destination.</p>
+
+            <div class="flex gap-2 mt-4">
+                <input type="text" id="cityInput" placeholder="Enter city name" class="btn"
+                    style="border: 1px solid #ccc; text-align: left; flex: 1;">
+                <button id="getWeatherBtn" class="btn btn-primary">Get Weather</button>
+            </div>
+
+            <div id="weatherResult" class="mt-4" style="display: none;">
+                <div class="card" style="background: #f1f5f9;">
+                    <h3 id="cityName">City Name</h3>
+                    <p>🌡️ Temperature: <span id="temp">--</span> °C</p>
+                    <p>🌧️ Condition: <span id="condition">--</span></p>
+                    <p>💨 Wind Speed: <span id="wind">--</span> m/s</p>
+                    <div id="weatherAlert" style="margin-top: 15px; padding: 10px; border-radius: 8px; display: none;">
+                        <!-- Alerts will show here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/weather.js"></script>
+</body>
+
+</html>

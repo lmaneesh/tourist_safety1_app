@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tourist Places - Tourist Safety App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- TOP NAVBAR -->
+    <div class="navbar">
+        <div class="logo">🧭 Tourist Safety</div>
+
+        <div class="nav-links">
+            <a href="dashboard.html">Home</a>
+            <a href="edit-profile.html">Profile</a>
+            <a href="tourist.html" class="active">Tourist Places</a>
+            <a href="weather.html">Weather</a>
+            <a href="transport.html">Transport</a>
+            <a href="#" id="logoutBtn" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="page-container">
+        <div class="card">
+            <h2>🗺️ Famous Tourist Places</h2>
+            <p>Discover top-rated destinations and find budget-friendly accommodation.</p>
+
+            <div class="grid mt-4" id="placesGrid">
+                <!-- Places will be loaded here -->
+                <div class="card">
+                    <h3>Loading places...</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏠 Budget Cottages</h2>
+            <p>Affordable stays for a comfortable trip.</p>
+            <div class="grid mt-4" id="cottagesGrid">
+                <!-- Cottages will be loaded here -->
+                <div class="card">
+                    <h3>Loading cottages...</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/tourist.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tourist Safety App</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- TOP NAVBAR -->
+  <div class="navbar">
+    <div class="logo">🧭 Tourist Safety</div>
+
+    <div class="nav-links">
+      <a href="dashboard.html" class="active">Home</a>
+      <a href="edit-profile.html">Profile</a>
+      <a href="tourist.html">Tourist Places</a>
+      <a href="weather.html">Weather</a>
+      <a href="transport.html">Transport</a>
+      <a href="#" id="logoutBtn" class="logout-btn">Logout</a>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="page-container">
+    <div class="card">
+      <h2>Welcome to Tourist Safety App</h2>
+      <p>Your one-stop solution for a safe and informed travel experience. Select an option from the top menu to get
+        started.</p>
+
+      <div class="grid mt-4">
+        <div class="card" style="margin-bottom: 0;">
+          <h3>🌦️ Weather Alerts</h3>
+          <p>Check real-time climate conditions and get safety alerts for your destination.</p>
+          <a href="weather.html" class="btn btn-primary">Check Weather</a>
+        </div>
+        <div class="card" style="margin-bottom: 0;">
+          <h3>🗺️ Explore Places</h3>
+          <p>Discover famous tourist spots, check ratings, and find budget-friendly cottages.</p>
+          <a href="tourist.html" class="btn btn-primary">Find Places</a>
+        </div>
+        <div class="card" style="margin-bottom: 0;">
+          <h3>🚨 Emergency SOS</h3>
+          <p>In case of trouble, use our SOS button to alert police and rescue teams immediately.</p>
+          <button id="mainSosBtn" class="btn btn-danger">Trigger SOS</button>
+        </div>
+      </div>
+
+      <!-- New Tourist Section -->
+      <div id="tourist-section" class="mt-4" style="display: none;">
+        <h3>📍 Nearby Attractions</h3>
+        <p>Top sights around your selected destination.</p>
+        <div id="tourist-cards" class="grid mt-2">
+          <!-- Tourist cards will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="module" src="js/firebase.js"></script>
+  <script type="module" src="js/sos.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+
+</html>

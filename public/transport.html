@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Transport - Tourist Safety App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- TOP NAVBAR -->
+    <div class="navbar">
+        <div class="logo">🧭 Tourist Safety</div>
+
+        <div class="nav-links">
+            <a href="dashboard.html">Home</a>
+            <a href="edit-profile.html">Profile</a>
+            <a href="tourist.html">Tourist Places</a>
+            <a href="weather.html">Weather</a>
+            <a href="transport.html" class="active">Transport</a>
+            <a href="#" id="logoutBtn" class="logout-btn">Logout</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="page-container">
+        <div class="card">
+            <h2>🚆 Transport Facilities</h2>
+            <p>Explore different ways to reach your destination safely and efficiently.</p>
+
+            <div class="grid mt-4">
+                <div class="card">
+                    <h3>✈️ Flight Search</h3>
+                    <p>Enter Airport IATA code (e.g., DEL, BOM, JFK) to see live departures.</p>
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <input type="text" id="iataInput" placeholder="Airport Code (e.g. DEL)" class="input"
+                            style="flex: 1;">
+                        <button id="searchFlightBtn" class="btn btn-primary">Search</button>
+                    </div>
+
+                    <div id="flight-results" style="margin-top: 20px;">
+                        <div id="flight-cards" class="grid" style="grid-template-columns: 1fr;">
+                            <!-- Flight cards will appear here -->
+                        </div>
+                    </div>
+                </div>
+                <!-- ... rest of the original categories ... -->
+                <!-- Train Search Section -->
+                <div class="card">
+                    <h3>🚆 Train Search</h3>
+                    <p>Search trains between stations and check live status.</p>
+                    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" id="trainFrom" placeholder="From (e.g. NDLS)" class="input"
+                                style="flex: 1;">
+                            <input type="text" id="trainTo" placeholder="To (e.g. BCT)" class="input" style="flex: 1;">
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="date" id="trainDate" class="input" style="flex: 1;">
+                            <button id="searchTrainBtn" class="btn btn-primary">Find Trains</button>
+                        </div>
+                    </div>
+
+                    <div id="train-results" style="margin-top: 20px;">
+                        <div id="train-cards" class="grid" style="grid-template-columns: 1fr;">
+                            <!-- Train cards will appear here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="opacity: 0.6;">
+                    <h3>🚌 Bus / Public Transport</h3>
+                    <p>Economical options for local and regional travel. (Coming Soon)</p>
+                </div>
+                <div class="card" style="opacity: 0.6;">
+                    <h3>🚗 Car Rentals / Taxi</h3>
+                    <p>Flexible and private travel options. (Coming Soon)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/transport.js"></script>
+</body>
+
+</html>
